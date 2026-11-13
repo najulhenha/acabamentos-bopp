@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Acabamentos BOPP Alinhavo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap">
+<style>
+/* Layout: cabeçalho curto, três capas lado a lado (empilham no celular), cada uma com sua ficha embaixo */
+:root{
+  --bg:#f7f2f3; --surface:#ffffff; --fg:#2b1f27; --muted:#6d5b66; --line:#e6d9de;
+  --accent:#8a3f63; --accent-soft:#f1e0e8;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Nunito Sans", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1b1519; --surface:#251d22; --fg:#f3e9ee; --muted:#b8a5b0; --line:#3a2e35;
+  --accent:#e09bbb; --accent-soft:#3a2530; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#1b1519; --surface:#251d22; --fg:#f3e9ee; --muted:#b8a5b0; --line:#3a2e35;
+  --accent:#e09bbb; --accent-soft:#3a2530; color-scheme:dark }
+
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:1120px;margin:0 auto;padding-block:40px 56px;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));
+  display:flex;flex-direction:column;gap:32px}
+header{display:flex;flex-direction:column;gap:10px;max-width:62ch}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(30px,5vw,46px);line-height:1.08;margin:0;text-wrap:balance}
+header p{margin:0;color:var(--muted)}
+.tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{font:600 14px var(--body);border:1px solid var(--line);background:var(--surface);color:var(--fg);
+  padding:9px 16px;border-radius:999px;cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn.primary{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.tools small{color:var(--muted)}
+
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+@media (max-width:860px){.grid{grid-template-columns:minmax(0,1fr);max-width:420px;margin:0 auto;width:100%}}
+
+.item{display:flex;flex-direction:column;gap:18px}
+.stage{perspective:900px;display:flex;justify-content:center;padding:14px 0;touch-action:pan-y}
+.card{position:relative;width:100%;max-width:300px;aspect-ratio:5/7;border-radius:10px;overflow:hidden;
+  transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transform-style:preserve-3d;
+  box-shadow:0 1px 2px rgba(0,0,0,.12), 0 18px 40px -18px rgba(60,20,40,.45);will-change:transform;cursor:grab}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;user-select:none;-webkit-user-drag:none}
+.layer{position:absolute;inset:0;pointer-events:none}
+
+/* BRILHO: cores vivas + reflexo nítido que acompanha a luz */
+.brilho img{filter:saturate(1.12) contrast(1.05)}
+.brilho .l1{background:radial-gradient(circle at var(--mx,50%) var(--my,30%), rgba(255,255,255,.85) 0%, rgba(255,255,255,.35) 9%, rgba(255,255,255,0) 26%);mix-blend-mode:soft-light}
+.brilho .l2{background:linear-gradient(115deg, transparent calc(var(--px,50%) - 14%), rgba(255,255,255,.55) var(--px,50%), transparent calc(var(--px,50%) + 10%));mix-blend-mode:overlay}
+.brilho .l3{background:radial-gradient(circle at var(--mx,50%) var(--my,30%), rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 7%)}
+
+/* FOSCO: cores um pouco mais suaves, toque aveludado, sem espelho */
+.fosco img{filter:saturate(.86) contrast(.93) brightness(1.03)}
+.fosco .l1{background:rgba(255,255,255,.07)}
+.fosco .l2{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.22;mix-blend-mode:soft-light}
+.fosco .l3{background:radial-gradient(circle at var(--mx,50%) var(--my,30%), rgba(255,255,255,.16) 0%, rgba(255,255,255,0) 60%)}
+
+/* HOLOGRÁFICO: arco-íris que muda com o ângulo + textura fina */
+.holo img{filter:saturate(1.05)}
+.holo .l1{background:linear-gradient(calc(var(--ang,0deg) + 110deg),
+   #ff6fa8 0%, #ffd36f 14%, #8dffb0 28%, #6fd6ff 42%, #b78bff 56%, #ff6fa8 70%, #ffd36f 84%, #8dffb0 100%);
+   background-size:260% 260%;background-position:var(--px,50%) var(--py,50%);mix-blend-mode:color-dodge;opacity:.1}
+.holo .shards{width:100%;height:100%;mix-blend-mode:screen;opacity:.7}
+.holo .l3{background:radial-gradient(circle at var(--mx,50%) var(--my,30%), rgba(255,255,255,.55) 0%, rgba(255,255,255,0) 30%);mix-blend-mode:overlay}
+
+.ficha{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+.ficha h2{font-family:var(--display);font-weight:700;font-size:24px;margin:0;line-height:1.1}
+.ficha .tag{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.ficha p{margin:0;color:var(--muted)}
+.ficha ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+.ficha li{display:grid;grid-template-columns:92px minmax(0,1fr);gap:8px;font-size:14px;border-top:1px solid var(--line);padding-top:6px}
+.ficha li b{color:var(--fg);font-weight:700}
+.ficha li span{color:var(--muted)}
+
+.nota{font-size:14px;color:var(--muted);max-width:70ch;border-top:1px solid var(--line);padding-top:18px}
+@media (prefers-reduced-motion: reduce){.card{transition:none}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Alinhavo Ateliê · laminação BOPP</span>
+    <h1>Brilho, fosco ou holográfico?</h1>
+    <p>A mesma capa com os três acabamentos. Passe o mouse (ou o dedo) sobre as capas para ver como cada uma reage à luz.</p>
+    <div class="tools">
+      <button class="btn primary" id="trocar" type="button">Ver com a minha arte</button>
+      <button class="btn" id="mover" type="button" aria-pressed="true">Pausar movimento</button>
+      <input type="file" id="arquivo" accept="image/*" hidden>
+      <small>A imagem fica só no seu aparelho.</small>
+    </div>
+  </header>
+
+  <section class="grid">
+    <article class="item">
+      <div class="stage"><div class="card brilho" data-fx><img alt="Capa com laminação brilho"><div class="layer l1"></div><div class="layer l2"></div><div class="layer l3"></div></div></div>
+      <div class="ficha">
+        <span class="tag">BOPP brilho</span>
+        <h2>Brilho</h2>
+        <p>Cores mais vivas e contrastadas, com reflexo de luz como uma foto revelada.</p>
+        <ul>
+          <li><b>Visual</b><span>Vibrante, espelhado</span></li>
+          <li><b>Toque</b><span>Liso e escorregadio</span></li>
+          <li><b>Na luz</b><span>Reflete; em luz forte pode espelhar</span></li>
+          <li><b>Combina com</b><span>Fotos, cores fortes, ímãs e polaroids</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="item">
+      <div class="stage"><div class="card fosco" data-fx><img alt="Capa com laminação fosca"><div class="layer l1"></div><div class="layer l2"></div><div class="layer l3"></div></div></div>
+      <div class="ficha">
+        <span class="tag">BOPP fosco</span>
+        <h2>Fosco</h2>
+        <p>Acabamento sóbrio e elegante. As cores ficam um pouco mais suaves e não há reflexo.</p>
+        <ul>
+          <li><b>Visual</b><span>Delicado, sofisticado</span></li>
+          <li><b>Toque</b><span>Aveludado</span></li>
+          <li><b>Na luz</b><span>Não reflete, lê bem em qualquer ângulo</span></li>
+          <li><b>Combina com</b><span>Tons pastel, minimalista, agendas profissionais</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="item">
+      <div class="stage"><div class="card holo" data-fx><img alt="Capa com laminação holográfica caquinhos"><div class="layer l1"></div><canvas class="layer shards"></canvas><div class="layer l3"></div></div></div>
+      <div class="ficha">
+        <span class="tag">BOPP holográfico caquinhos</span>
+        <h2>Holográfico</h2>
+        <p>Pequenos cacos de arco-íris, como vidro quebrado, que acendem e trocam de cor conforme o ângulo. A arte continua aparecendo por baixo.</p>
+        <ul>
+          <li><b>Visual</b><span>Cintilante, cheio de brilhos</span></li>
+          <li><b>Toque</b><span>Liso</span></li>
+          <li><b>Na luz</b><span>Muda de cor a cada movimento</span></li>
+          <li><b>Combina com</b><span>Presentes, temas infantis e festivos</span></li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <p class="nota">Simulação de tela: serve para comparar os acabamentos entre si. No papel, o efeito depende da luz do ambiente, e o holográfico costuma ficar ainda mais marcante ao vivo.</p>
+</div>
+
+<script>
+(function(){
+  var arte = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700">'+
+  '<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6c9d4"/><stop offset="1" stop-color="#e9a3b9"/></linearGradient></defs>'+
+  '<rect width="500" height="700" fill="url(#g)"/>'+
+  '<circle cx="250" cy="300" r="170" fill="#7b2f57"/>'+
+  '<circle cx="250" cy="300" r="150" fill="none" stroke="#f9e3ea" stroke-width="3" stroke-dasharray="10 9"/>'+
+  '<g fill="#3f7a5a"><ellipse cx="110" cy="150" rx="70" ry="26" transform="rotate(-35 110 150)"/><ellipse cx="400" cy="460" rx="78" ry="28" transform="rotate(-30 400 460)"/><ellipse cx="420" cy="140" rx="54" ry="20" transform="rotate(30 420 140)"/><ellipse cx="80" cy="470" rx="58" ry="21" transform="rotate(35 80 470)"/></g>'+
+  '<g fill="#ffb347"><circle cx="160" cy="95" r="34"/><circle cx="375" cy="545" r="30"/></g>'+
+  '<g fill="#fff3c4"><circle cx="160" cy="95" r="12"/><circle cx="375" cy="545" r="11"/></g>'+
+  '<g fill="#ff6f91"><circle cx="440" cy="250" r="26"/><circle cx="60" cy="330" r="22"/></g>'+
+  '<text x="250" y="285" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="54" fill="#f9e3ea">Agenda</text>'+
+  '<text x="250" y="355" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="72" fill="#ffffff">2027</text>'+
+  '<rect x="0" y="610" width="500" height="90" fill="#7b2f57"/>'+
+  '<text x="250" y="664" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" letter-spacing="6" fill="#f9e3ea">ALINHAVO ATELIÊ</text>'+
+  '</svg>');
+
+  var cards = Array.prototype.slice.call(document.querySelectorAll('[data-fx]'));
+  var imgs = cards.map(function(c){return c.querySelector('img')});
+  imgs.forEach(function(i){ i.src = arte; });
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var auto = !reduce;
+  var ativo = null; // card sob o ponteiro
+
+  function aplicar(card, x, y){ // x,y entre 0 e 1
+    card._x = x; card._y = y;
+    var s = card.style;
+    s.setProperty('--mx', (x*100)+'%');
+    s.setProperty('--my', (y*100)+'%');
+    s.setProperty('--px', (x*100)+'%');
+    s.setProperty('--py', (y*100)+'%');
+    s.setProperty('--ry', ((x-.5)*22)+'deg');
+    s.setProperty('--rx', ((.5-y)*18)+'deg');
+    s.setProperty('--ang', ((x-.5)*120 + (y-.5)*60)+'deg');
+  }
+
+  cards.forEach(function(card){
+    aplicar(card, .35, .3);
+    function mover(e){
+      var r = card.getBoundingClientRect();
+      var x = Math.min(1, Math.max(0, (e.clientX - r.left)/r.width));
+      var y = Math.min(1, Math.max(0, (e.clientY - r.top)/r.height));
+      aplicar(card, x, y);
+    }
+    card.addEventListener('pointerenter', function(){ ativo = card; });
+    card.addEventListener('pointermove', function(e){ ativo = card; mover(e); });
+    card.addEventListener('pointerleave', function(){ ativo = null; });
+  });
+
+  // cacos do holográfico: grade irregular de triângulos
+  var holo = document.querySelector('.holo');
+  var cv = holo.querySelector('.shards'), ctx = cv.getContext('2d');
+  var cacos = [];
+  (function gerar(){
+    var C = 13, R = 18, P = [], i, j;
+    function rnd(a){ return (Math.random()-.5)*a; }
+    for (j=0;j<=R;j++){ P[j]=[]; for (i=0;i<=C;i++){
+      var jx = (i>0&&i<C) ? rnd(.75/C) : 0, jy = (j>0&&j<R) ? rnd(.75/R) : 0;
+      P[j][i] = [i/C+jx, j/R+jy];
+    }}
+    for (j=0;j<R;j++) for (i=0;i<C;i++){
+      var a=P[j][i], b=P[j][i+1], c=P[j+1][i+1], d=P[j+1][i];
+      var tris = Math.random()<.5 ? [[a,b,c],[a,c,d]] : [[a,b,d],[b,c,d]];
+      tris.forEach(function(t){ cacos.push({p:t, h:Math.random()*360, a:Math.random()*Math.PI*2, f:2+Math.random()*7}); });
+    }
+  })();
+  function tamanho(){
+    var r = cv.getBoundingClientRect(), dpr = Math.min(2, window.devicePixelRatio||1);
+    cv.width = Math.max(1, Math.round(r.width*dpr)); cv.height = Math.max(1, Math.round(r.height*dpr));
+  }
+  tamanho(); window.addEventListener('resize', tamanho);
+  function desenharCacos(){
+    var W = cv.width, H = cv.height;
+    var x = (holo._x==null ? .5 : holo._x) - .5, y = (holo._y==null ? .5 : holo._y) - .5;
+    ctx.clearRect(0,0,W,H);
+    ctx.lineWidth = Math.max(.6, W/500); ctx.strokeStyle = 'rgba(255,255,255,.07)';
+    for (var k=0;k<cacos.length;k++){
+      var c = cacos[k];
+      var s = Math.sin(c.a + x*c.f + y*(9-c.f));
+      var luz = Math.pow(Math.max(0,s), 4);
+      var hue = (c.h + x*260 + y*180 + 360) % 360;
+      ctx.fillStyle = 'hsla('+hue.toFixed(0)+',85%,'+(62+luz*12).toFixed(0)+'%,'+(.02+luz*.32).toFixed(3)+')';
+      ctx.beginPath();
+      ctx.moveTo(c.p[0][0]*W, c.p[0][1]*H); ctx.lineTo(c.p[1][0]*W, c.p[1][1]*H); ctx.lineTo(c.p[2][0]*W, c.p[2][1]*H);
+      ctx.closePath(); ctx.fill(); ctx.stroke();
+    }
+  }
+
+  var t0 = performance.now();
+  function loop(t){
+    if (auto){
+      var k = (t - t0)/1000;
+      cards.forEach(function(card, i){
+        if (card === ativo) return;
+        var f = k*0.6 + i*1.3;
+        aplicar(card, .5 + Math.cos(f)*.38, .45 + Math.sin(f*1.3)*.3);
+      });
+    }
+    desenharCacos();
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+
+  var bMover = document.getElementById('mover');
+  function rotulo(){ bMover.textContent = auto ? 'Pausar movimento' : 'Movimentar sozinho'; bMover.setAttribute('aria-pressed', auto ? 'true':'false'); }
+  rotulo();
+  bMover.addEventListener('click', function(){ auto = !auto; rotulo(); });
+
+  var input = document.getElementById('arquivo');
+  document.getElementById('trocar').addEventListener('click', function(){ input.click(); });
+  input.addEventListener('change', function(){
+    var f = input.files && input.files[0]; if (!f) return;
+    var rd = new FileReader();
+    rd.onload = function(){ imgs.forEach(function(i){ i.src = rd.result; }); };
+    rd.readAsDataURL(f);
+  });
+})();
+</script>
+
+</body>
+</html>
